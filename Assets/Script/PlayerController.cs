@@ -7,12 +7,17 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerrb;
     public int upforce = 100;
     private bool isOnGround = true; // on ground
+    public float gravityoffset = 3f;
+    public bool gameover = false;
+    public bool alive = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Start)");
         playerrb = GetComponent<Rigidbody>();
-        playerrb.AddForce(Vector3.up * upforce);
+        Physics.gravity *= gravityoffset; //Physics.gravity = Physics.gravity * gravityoffset; 
+
     }
 
     // Update is called once per frame
@@ -27,6 +32,20 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        isOnGround = true; // on ground
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isOnGround = true; // on ground
+            alive = true;
+        }
+        else if (collision.gameObject.CompareTag("ob"))
+        {
+            gameover = true;
+            alive = false;
+
+            Debug.Log("Game over)");
+        }
+
     }
+
+
 }

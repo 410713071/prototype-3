@@ -90,10 +90,10 @@ GameObject:
   - component: {fileID: 4340032679189490797}
   - component: {fileID: 4377840047323406879}
   - component: {fileID: 5203821439100954254}
-  - component: {fileID: -6118085311773132354}
+  - component: {fileID: 2563597002167919485}
   m_Layer: 0
   m_Name: obstacle
-  m_TagString: Untagged
+  m_TagString: ob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6118085311773132354
+--- !u!114 &2563597002167919485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,3 +155,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  playercs: {fileID: 0}
